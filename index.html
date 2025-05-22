@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to ARYAN CRICKET TIPS </h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#images">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Vishnu Reddy , a passionate individual with a love for all punters. "Dino se soch raha tha ek content page shuru karun... Aaj finally start kar raha hoon — Aryan Cricket Updates.
+
+Sabse pehle baat karni hai ek important topic pe — Cricket Betting.
+
+Dekho, sach yeh hai — betting illegal hai, aur mai yeh bhi keh sakta hoon ki yeh tumhari zindagi barbaad kar sakti hai.
+
+Fir bhi, Instagram pe, Telegram pe har jagah creators milege jo kehte hai:
+'Sure shot match', 'fixed hai bhai', 'Dubai se report aayi hai' —
+Yeh sab bakwaas hai! Yeh log apne followers ka bharosa tod rahe hai, paisa kama rahe hai.
+
+Lekin mai yeh kehna chahunga — mai kisi ko judge nahi kar raha.
+Yeh meri personal opinion hai. Aapka kya kehna hai? Neeche comment karke zaroor batao.
+
+🔚 Akhir mein ek baat kehna chahta hoon —
+Haan, mai bhi cricket betting se jura hoon. Lekin humari approach alag hai.
+Hum sirf un logon ke liye content bana rahe hain jo ab bhi betting chod nahi pa rahe hain.
+Agar aap bhi unme se ho, toh aap Aryan Cricket Updates join kar sakte ho.
+
+Hamara kaam baaki sabse alag hai.
+Agar koi dost ya bhai betting me laga hai, toh un tak yeh reel pahuchao.
+
+Thank you 🙏" .</p>
+        </section>
+        <section id="images">
+            <h2>Gallery</h2>
+            <div class="image-container">
+                
+
+                <img src="images/vvr.jpg" alt="REDDY">
+                <img src="images/klr.jpg" alt="REDDY">
+                <img src="images/vrr.jpg" alt="REDDY">
+                
+
+            
+
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Contact me at: <a href="9398397640">your.email@example.com</a></p>
+        <div class="socials">
+            <a href="https://instagram.com/vishnu_reddyy_45" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://t.me/ranbirroyoffice" target="_blank" rel="noopener">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://wa.me/919398397640?text=sir%20tqs" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </footer>
+    <audio id="welcome-audio" src="audio/vishnu.mp3.mp3"></audio>
+    <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('welcome-audio');
+    const start = 72; // start at 72 seconds
+    const end = 78;   // end at 93 seconds
+    const fadeDuration = 1; // seconds to fade out
+
+    audio.currentTime = start;
+    audio.volume = 1;
+    audio.play().catch(() => {
+      // Some browsers require user interaction to play audio
+    });
+
+    audio.addEventListener('timeupdate', function onTimeUpdate() {
+      // Start fading out when within fadeDuration of the end
+      if (audio.currentTime >= end - fadeDuration && audio.currentTime < end) {
+        const remaining = end - audio.currentTime;
+        audio.volume = Math.max(0, remaining / fadeDuration);
+      }
+      // Stop and cleanup at end
+      if (audio.currentTime >= end) {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.volume = 1; // Reset for next play
+        audio.removeEventListener('timeupdate', onTimeUpdate);
+      }
+    });
+  });
+</script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
